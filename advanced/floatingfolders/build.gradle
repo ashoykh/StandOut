@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+android {
+    buildToolsVersion '22.0.1'
+    compileSdkVersion 16
+
+    defaultConfig {
+        applicationId "wei.mark.floatingfolders"
+        minSdkVersion 7
+        targetSdkVersion 16
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles.add(file('proguard-project.txt'))
+        }
+    }
+
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile project(':library')
+}

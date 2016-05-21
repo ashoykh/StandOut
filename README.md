@@ -1,3 +1,9 @@
+### To build
+Make sure ANDROID_SDK_ROOT is set
+./gradlew :example:assembleDebug - build example debug apk
+./gradlew :advanced:floatingfolders:assembleDebug - build floating folders debug apk
+
+
 ### Coming Soon
 Meanwhile, checkout the demo video at http://www.youtube.com/watch?v=S3vHjxonOeg
 

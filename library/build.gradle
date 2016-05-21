@@ -1,0 +1,39 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 15
+    buildToolsVersion '22.0.1'
+
+    defaultConfig {
+        minSdkVersion 7
+        targetSdkVersion 15
+        versionCode 1
+        versionName "1.0"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    lintOptions {
+        lintConfig file('lint.xml')
+
+        ignoreWarnings false
+        warningsAsErrors true
+        abortOnError true
+        showAll true
+
+        textReport true
+        textOutput file('build/reports/lint/lint-report.txt')
+
+        xmlReport true
+        xmlOutput file('build/reports/lint/lint-report.xml')
+
+        htmlReport true
+        htmlOutput file('build/reports/lint/lint-report.html')
+    }
+}
+
+dependencies {
+}

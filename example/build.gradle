@@ -1,0 +1,31 @@
+apply plugin: 'com.android.application'
+
+android {
+    buildToolsVersion '22.0.1'
+    compileSdkVersion 15
+
+    defaultConfig {
+        applicationId "wei.mark.example"
+        minSdkVersion 7
+        targetSdkVersion 15
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles.add(file('proguard-project.txt'))
+        }
+    }
+
+}
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile project(':library')
+}
