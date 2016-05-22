@@ -16,11 +16,11 @@ public class StandOutExampleActivity extends Activity {
 
 		// show a MultiWindow, SimpleWindow
 
-		StandOutWindow
-				.show(this, SimpleWindow.class, StandOutWindow.DEFAULT_ID);
+		//StandOutWindow
+				//.show(this, SimpleWindow.class, StandOutWindow.DEFAULT_ID);
 		StandOutWindow.show(this, MultiWindow.class, StandOutWindow.DEFAULT_ID);
-		StandOutWindow.show(this, WidgetsWindow.class,
-				StandOutWindow.DEFAULT_ID);
+		//StandOutWindow.show(this, WidgetsWindow.class,
+				//StandOutWindow.DEFAULT_ID);
 
 		// show a MostBasicWindow. It is commented out because it does not
 		// support closing.
