@@ -345,8 +345,6 @@ public abstract class StandOutWindow extends Service {
     // internal state variables
     private boolean startedForeground;
 
-        private boolean requireNotification = true;
-
     @Override
     public IBinder onBind(Intent intent) {
         return null;
@@ -1136,7 +1134,7 @@ public abstract class StandOutWindow extends Service {
                 mNotificationManager.notify(getClass().hashCode()
                         + ONGOING_NOTIFICATION_ID, notification);
             }
-        } else if (requireNotification) {
+        } else if (requireNotification()) {
             // notification can only be null if it was provided before
             if (!startedForeground) {
                 throw new RuntimeException("Your StandOutWindow service must"
@@ -1769,8 +1767,8 @@ public abstract class StandOutWindow extends Service {
      * as part of your app.  Or, your window is so short lived that it's unlikely to
      * be killed.
      */
-    public void overrideRequireNotification() {
-        requireNotification = false;
+    public boolean requireNotification() {
+        return true;
     }
 
     /**
